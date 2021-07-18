@@ -3,10 +3,14 @@ resource "random_password" "admin_jwt_secret" {
   special = false
 }
 
+resource "random_uuid" "jwt_secret" {}
+
+
 resource "vault_generic_secret" "core" {
   path = "${local.valut_prefix}/core"
 
   data_json = jsonencode({
     admin_jwt_secret = random_password.admin_jwt_secret.result
+    jwt_secret       = random_uuid.jwt_secret.result
   })
 }
