@@ -8,5 +8,6 @@ terraform {
 }
 
 locals {
-  vault_prefix = "${var.vault_prefix}/${var.env_name}"
+  vault_prefix          = "${var.vault_prefix}/${var.env_name}"
+  vault_approle_backend = "approle"
 }
