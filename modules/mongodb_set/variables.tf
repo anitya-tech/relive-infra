@@ -1,4 +1,4 @@
-variable "valut_prefix" { type = string }
+variable "vault_prefix" { type = string }
 
 variable "host" { type = string }
 variable "database" { type = string }

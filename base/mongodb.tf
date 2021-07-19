@@ -41,7 +41,7 @@ resource "mongodb_db_user" "relive" {
 }
 
 resource "vault_generic_secret" "mongo" {
-  path = "${local.valut_prefix}/mongo/rw"
+  path = "${local.vault_prefix}/mongo/rw"
 
   data_json = jsonencode({
     hostname      = local.value_mongo.host,

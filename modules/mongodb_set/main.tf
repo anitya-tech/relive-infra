@@ -35,7 +35,7 @@ resource "mongodb_db_user" "default" {
 }
 
 resource "vault_generic_secret" "mongo" {
-  path = "${var.valut_prefix}/rw"
+  path = "${var.vault_prefix}/rw"
 
   data_json = jsonencode({
     hostname      = var.host

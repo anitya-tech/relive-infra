@@ -10,7 +10,7 @@ provider "mongodb" {
 module "mongodb" {
   source = "./modules/mongodb_set"
 
-  valut_prefix = "${local.valut_prefix}/mongo"
+  vault_prefix = "${local.vault_prefix}/mongo"
 
   host     = var.mongo_cred.host
   database = "relive-cms-${var.env_name}"

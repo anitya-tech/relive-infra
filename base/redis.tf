@@ -2,7 +2,7 @@ data "vault_generic_secret" "redis" { path = "geektr.co/databases/redis/hinata" 
 locals { value_redis = data.vault_generic_secret.redis.data }
 
 resource "vault_generic_secret" "redis" {
-  path = "${local.valut_prefix}/redis/rw"
+  path = "${local.vault_prefix}/redis/rw"
 
   data_json = jsonencode({
     hostname = local.value_redis.host,

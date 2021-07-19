@@ -15,7 +15,7 @@ provider "vault" {
 }
 
 locals {
-  valut_prefix = "projects/anitya/relive/cms"
+  vault_prefix = "projects/anitya/relive/cms"
 }
 
 // MongoDB
@@ -24,7 +24,7 @@ data "vault_generic_secret" "mongo" { path = "geektr.co/databases/mongo/hinata" 
 module "dev" {
   source = "./modules/cms_env"
 
-  valut_prefix = local.valut_prefix
+  vault_prefix = local.vault_prefix
   env_name     = "dev"
 
   mongo_cred = data.vault_generic_secret.mongo.data
@@ -33,7 +33,7 @@ module "dev" {
 module "prod" {
   source = "./modules/cms_env"
 
-  valut_prefix = local.valut_prefix
+  vault_prefix = local.vault_prefix
   env_name     = "prod"
 
   mongo_cred = data.vault_generic_secret.mongo.data

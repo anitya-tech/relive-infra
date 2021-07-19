@@ -74,7 +74,7 @@ resource "minio_iam_group_user_attachment" "relive_ro" {
 }
 
 resource "vault_generic_secret" "minio_rw" {
-  path = "${local.valut_prefix}/minio/rw"
+  path = "${local.vault_prefix}/minio/rw"
 
   data_json = jsonencode({
     minio_server     = local.value_minio.MINIO_SERVER
@@ -85,7 +85,7 @@ resource "vault_generic_secret" "minio_rw" {
 }
 
 resource "vault_generic_secret" "minio_ro" {
-  path = "${local.valut_prefix}/minio/ro"
+  path = "${local.vault_prefix}/minio/ro"
 
   data_json = jsonencode({
     minio_server     = local.value_minio.MINIO_SERVER

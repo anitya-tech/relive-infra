@@ -31,7 +31,7 @@ resource "rabbitmq_permissions" "relive" {
 }
 
 resource "vault_generic_secret" "rabbitmq" {
-  path = "${local.valut_prefix}/rabbitmq/rw"
+  path = "${local.vault_prefix}/rabbitmq/rw"
 
   data_json = jsonencode({
     hostname : local.value_rabbitmq.host,

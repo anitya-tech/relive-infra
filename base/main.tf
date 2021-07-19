@@ -29,5 +29,5 @@ provider "vault" {
 }
 
 locals {
-  valut_prefix = "projects/anitya/relive/base"
+  vault_prefix = "projects/anitya/relive/base"
 }

@@ -8,5 +8,5 @@ terraform {
 }
 
 locals {
-  valut_prefix = "${var.valut_prefix}/${var.env_name}"
+  vault_prefix = "${var.vault_prefix}/${var.env_name}"
 }
